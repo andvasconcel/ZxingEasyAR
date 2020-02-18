@@ -33,7 +33,11 @@ namespace easyar
 		public RenderType Type = RenderType.Normal;
 		public GlassesDisplay Display = GlassesDisplay.Normal;
 
-		// VAR FOR ZXING //////////////
+		
+		// INIT ZXING ////////////////////////////////////////////////////////////////////////
+
+        // VAR FOR ZXING //////////////
+		
 		
 		internal class Data
 		{
@@ -51,13 +55,12 @@ namespace easyar
 		volatile bool stopSignal;
 		volatile bool dataSignal;
 		volatile Data data;
-		
-		///////////////////////////////		
-		
+				
 		
 		public void Start()
 		{			
-			// SELECT FORMATS TO DECODE //////		
+			// SELECT FORMATS TO DECODE //////	
+			
 			var formats = new List<BarcodeFormat>();
 			formats.Add(BarcodeFormat.QR_CODE);
 			
@@ -113,7 +116,11 @@ namespace easyar
 
 				Thread.Sleep(barcodeThreadDelay);
 			}
-		}
+		}		
+		
+		// END ZXING ////////////////////////////////////////////////////////////////////////
+		
+		
 
 		public void SetRenderType(RenderType value)
 		{
